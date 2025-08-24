@@ -1,0 +1,426 @@
+{
+	"info": {
+		"_postman_id": "3de9b97b-e0e0-46fd-9f6d-7b6dc214b312",
+		"name": "SpurTreeTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43033970"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// parse response\r",
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"// assertion - token exists\r",
+							"pm.test(\"Token is generated\", function () {\r",
+							"    pm.expect(jsonData.token).to.be.a(\"string\").and.not.empty;\r",
+							"});\r",
+							"\r",
+							"// save into environment\r",
+							"pm.environment.set(\"authToken\", jsonData.token);\r",
+							"\r",
+							"\r",
+							"/*\r",
+							"Whitelabel Error Page\r",
+							"This application has no explicit mapping for /error, so you are seeing this as a fallback.\r",
+							"\r",
+							"Sun Aug 24 12:19:30 UTC 2025\r",
+							"There was an unexpected error (type=Not Found, status=404).\r",
+							"*/"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"password\"\r\n}\r\n\r\n// This end point is not available. \r\n/*\r\nWhitelabel Error Page\r\nThis application has no explicit mapping for /error, so you are seeing this as a fallback.\r\n\r\nSun Aug 24 12:19:30 UTC 2025\r\nThere was an unexpected error (type=Not Found, status=404).\r\n\r\nNote : using fake token I have hit the same API. please check that.\r\n*/\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.restful-api.dev/auth",
+					"protocol": "https",
+					"host": [
+						"api",
+						"restful-api",
+						"dev"
+					],
+					"path": [
+						"auth"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let users = pm.response.json();\r",
+							"\r",
+							"// assert status code 200\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// assert response is not empty\r",
+							"pm.test(\"Response is not empty\", function () {\r",
+							"    // for array\r",
+							"    pm.expect(users.length).to.be.above(0);\r",
+							"});\r",
+							"\r",
+							"// optional: token was sent in request header\r",
+							"pm.test(\"Auth token sent in request\", function () {\r",
+							"    pm.expect(pm.request.headers.get(\"X-API-KEY\")).to.eql(pm.environment.get(\"authToken\"));\r",
+							"});\r",
+							"\r",
+							"\r",
+							"/*\r",
+							"Whitelabel Error Page\r",
+							"This application has no explicit mapping for /error, so you are seeing this as a fallback.\r",
+							"\r",
+							"Sun Aug 24 12:19:30 UTC 2025\r",
+							"There was an unexpected error (type=Not Found, status=404).\r",
+							"*/"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-API-KEY",
+						"value": "{{authToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"password\"\r\n}\r\n\r\n// This end point is not available. \r\n/*\r\nWhitelabel Error Page\r\nThis application has no explicit mapping for /error, so you are seeing this as a fallback.\r\n\r\nSun Aug 24 12:19:30 UTC 2025\r\nThere was an unexpected error (type=Not Found, status=404).\r\n\r\nNote : using fake token I have hit the same API. please check that.\r\n*/\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// assert to check if status code is 400\r",
+							"pm.test(\"Status code is 400\" , function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"// assert to check if there is any error \r",
+							"pm.test(\"Check if error field exists (optional)\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    if (jsonData.error) {\r",
+							"        console.log(\"Error field found:\", jsonData.error);\r",
+							"    } else {\r",
+							"        console.log(\"No error field in response\");\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SingleUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201 for user creation\", function () {\r",
+							"    pm.expect(pm.response.code).to.eql(201);\r",
+							"});\r",
+							"\r",
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"// Store id into environment\r",
+							"pm.environment.set(\"userId\", jsonData.id);\r",
+							"\r",
+							"console.log(\"Saved userId:\", jsonData.id);\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"johndoe@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SingleUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"let responseData = pm.response.json();\r",
+							"\r",
+							"// check updated name\r",
+							"pm.test(\"Response contains updated name\", function () {\r",
+							"    pm.expect(responseData.name).to.eql(\"JohnEdit Doe\");\r",
+							"});\r",
+							"\r",
+							"// ensure ID didn’t change\r",
+							"pm.test(\"Response contains correct ID\", function () {\r",
+							"    pm.expect(responseData.id).to.eql(parseInt(pm.variables.get(\"id\")));\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": {{id}},\r\n    \"name\": \"JohnEdit Doe\",\r\n    \"email\": \"johndoe@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users/{{id}}",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SingleUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// jsonplaceholder DELETE returns an empty object {}\r",
+							"let responseData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Response body is empty object\", function () {\r",
+							"    pm.expect(responseData).to.eql({});\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": {{id}},\r\n    \"name\": \"JohnEdit Doe\",\r\n    \"email\": \"johndoe@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users/{{id}}",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
