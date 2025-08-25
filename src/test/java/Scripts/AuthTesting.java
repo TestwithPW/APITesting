@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.*; // all RestAssured statics
@@ -14,7 +15,6 @@ public class AuthTesting {
 	private String token;
 	private int userId;
 	
-
 	@Test 
 	public void authtest() {
 		SoftAssert sf= new SoftAssert();
@@ -26,11 +26,11 @@ public class AuthTesting {
 				 """;
 
 		Response rs = RestAssured.given()
-						.baseUri("https://api.restful-api.dev")
-						.contentType("ContentType")
+						.baseUri("https://api.restful-api.dev/auth")
+						.contentType(ContentType.JSON)
 						.body(jbody)
 					.when()
-						.post("/auth")
+						.post()
 					.then()
 						.statusCode(200)
 						.extract()
@@ -67,10 +67,14 @@ public class AuthTesting {
 	    SoftAssert soft = new SoftAssert();
 
 	    Response resp = given()
-	            .baseUri("https://jsonplaceholder.typicode.com")
-	            .header("X-API-KEY", token == null ? "" : token) // harmless for this API
-	        .when().get("/users")
-	        .then().extract().response();
+	            .baseUri("https://jsonplaceholder.typicode.com/users")
+	            .header("X-API-KEY", token == null ? "" : token) 
+	        .when()
+	        	.get()
+	        .then()
+	        	.statusCode(200)
+	        	.extract()
+	        	.response();
 
 	    // print status code
 	    System.out.println("Status code: " + resp.getStatusCode());

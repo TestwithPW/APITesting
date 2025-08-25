@@ -17,11 +17,11 @@ public class NegativeTesting {
 
 	        // send POST with empty JSON body
 	        Response resp = RestAssured.given()
-	                .baseUri("https://jsonplaceholder.typicode.com")
-	                .contentType(ContentType.JSON)    // <- keep this
-	                .body("{}")                       // <- NOTE: quotes! a String
+	                .baseUri("https://jsonplaceholder.typicode.com/users")
+	                .contentType(ContentType.JSON)    
+	                .body("{}")                       
 	            .when()
-	                .post("/users")
+	                .post()
 	            .then()
 	                .extract().response();
 

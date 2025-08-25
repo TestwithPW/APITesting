@@ -16,14 +16,20 @@ public class EndToEndTesting {
 	    public void createUser_extractId() {
 	        SoftAssert soft = new SoftAssert();
 
-	        String body = "{ \"name\": \"John Tester\", \"email\": \"john.tester@example.com\" }";
+	        String body = """
+	        		
+	        		{
+						  "name": "John Doe",
+						  "email": "johndoe@example.com"
+						}""";
+	        
 
 	        Response resp = RestAssured.given()
-	                .baseUri("https://jsonplaceholder.typicode.com")
+	                .baseUri("https://jsonplaceholder.typicode.com/users")
 	                .contentType(ContentType.JSON)
 	                .body(body)
 	            .when()
-	                .post("/users")
+	                .post()
 	            .then()
 	                .extract().response();
 
@@ -47,8 +53,9 @@ public class EndToEndTesting {
 	    public void updateUser_put() {
 	        SoftAssert soft = new SoftAssert();
 
+	        System.out.println("Here using id=1 because >10 fails on JSONPlaceholder");
+
 	        // valid JSON body
-	        System.out.println("Here using id as 1 because 11 it fails and end-points only works for id between 1-10");
 	        String body = """
 	            {
 	              "id": 1,
@@ -60,10 +67,10 @@ public class EndToEndTesting {
 	        Response resp = RestAssured.given()
 	                .baseUri("https://jsonplaceholder.typicode.com")
 	                .contentType(ContentType.JSON)
-	                .pathParam("id", 1)   // safe to keep as int
+	                .pathParam("id", 1)                
 	                .body(body)
 	            .when()
-	                .put("/users/{id}")
+	                .put("/users/{id}")                
 	            .then()
 	                .extract().response();
 
