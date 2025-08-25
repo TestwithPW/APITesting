@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="6" passed="4" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-25T12:45:14 IST" name="Suite" finished-at="2025-08-25T12:45:21 IST" duration-ms="7183">
+  <suite started-at="2025-08-25T13:00:42 IST" name="Suite" finished-at="2025-08-25T13:00:47 IST" duration-ms="5580">
     <groups>
     </groups>
-    <test started-at="2025-08-25T12:45:14 IST" name="Test" finished-at="2025-08-25T12:45:21 IST" duration-ms="7183">
+    <test started-at="2025-08-25T13:00:42 IST" name="Test" finished-at="2025-08-25T13:00:47 IST" duration-ms="5580">
       <class name="Scripts.AuthTesting">
-        <test-method signature="authtest()[pri:0, instance:Scripts.AuthTesting@18078bef]" started-at="2025-08-25T12:45:16 IST" name="authtest" finished-at="2025-08-25T12:45:17 IST" duration-ms="757" status="FAIL">
+        <test-method signature="authtest()[pri:0, instance:Scripts.AuthTesting@2a3b5b47]" started-at="2025-08-25T13:00:42 IST" name="authtest" finished-at="2025-08-25T13:00:44 IST" duration-ms="1768" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[1 expectation failed.
@@ -48,7 +48,7 @@ at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCal
 at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
 at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
 at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-at Scripts.AuthTesting.authtest(AuthTesting.java:35)
+at Scripts.AuthTesting.authtest(AuthTesting.java:37)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -81,27 +81,27 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- authtest -->
-        <test-method signature="getUsers_headerAndBodyChecks()[pri:2, instance:Scripts.AuthTesting@18078bef]" started-at="2025-08-25T12:45:17 IST" name="getUsers_headerAndBodyChecks" finished-at="2025-08-25T12:45:17 IST" duration-ms="327" status="PASS">
+        <test-method signature="getUsers_headerAndBodyChecks()[pri:2, instance:Scripts.AuthTesting@2a3b5b47]" started-at="2025-08-25T13:00:44 IST" name="getUsers_headerAndBodyChecks" finished-at="2025-08-25T13:00:44 IST" duration-ms="600" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUsers_headerAndBodyChecks -->
       </class> <!-- Scripts.AuthTesting -->
       <class name="Scripts.EndToEndTesting">
-        <test-method signature="createUser_extractId()[pri:1, instance:Scripts.EndToEndTesting@145f66e3]" started-at="2025-08-25T12:45:17 IST" name="createUser_extractId" finished-at="2025-08-25T12:45:18 IST" duration-ms="1096" status="PASS">
+        <test-method signature="createUser_extractId()[pri:1, instance:Scripts.EndToEndTesting@2a65fe7c]" started-at="2025-08-25T13:00:45 IST" name="createUser_extractId" finished-at="2025-08-25T13:00:46 IST" duration-ms="928" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createUser_extractId -->
-        <test-method signature="updateUser_put()[pri:2, instance:Scripts.EndToEndTesting@145f66e3]" started-at="2025-08-25T12:45:18 IST" name="updateUser_put" finished-at="2025-08-25T12:45:19 IST" depends-on-methods="Scripts.EndToEndTesting.createUser_extractId" duration-ms="1016" status="PASS">
+        <test-method signature="updateUser_put()[pri:2, instance:Scripts.EndToEndTesting@2a65fe7c]" started-at="2025-08-25T13:00:46 IST" name="updateUser_put" finished-at="2025-08-25T13:00:47 IST" depends-on-methods="Scripts.EndToEndTesting.createUser_extractId" duration-ms="913" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- updateUser_put -->
-        <test-method signature="deleteUser()[pri:3, instance:Scripts.EndToEndTesting@145f66e3]" started-at="2025-08-25T12:45:19 IST" name="deleteUser" finished-at="2025-08-25T12:45:21 IST" depends-on-methods="Scripts.EndToEndTesting.updateUser_put" duration-ms="1403" status="PASS">
+        <test-method signature="deleteUser()[pri:3, instance:Scripts.EndToEndTesting@2a65fe7c]" started-at="2025-08-25T13:00:47 IST" name="deleteUser" finished-at="2025-08-25T13:00:47 IST" depends-on-methods="Scripts.EndToEndTesting.updateUser_put" duration-ms="509" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteUser -->
       </class> <!-- Scripts.EndToEndTesting -->
       <class name="Scripts.NegativeTesting">
-        <test-method signature="createUser_emptyBody_shouldBeClientError()[pri:0, instance:Scripts.NegativeTesting@409bf450]" started-at="2025-08-25T12:45:14 IST" name="createUser_emptyBody_shouldBeClientError" finished-at="2025-08-25T12:45:16 IST" duration-ms="2551" status="FAIL">
+        <test-method signature="createUser_emptyBody_shouldBeClientError()[pri:0, instance:Scripts.NegativeTesting@3023df74]" started-at="2025-08-25T13:00:44 IST" name="createUser_emptyBody_shouldBeClientError" finished-at="2025-08-25T13:00:45 IST" duration-ms="828" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[The following asserts failed:
@@ -114,7 +114,7 @@ Expected 4xx for empty body, but got 201 expected [true] but found [false],
 Error message should be there expected [true] but found [false]
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-at Scripts.NegativeTesting.createUser_emptyBody_shouldBeClientError(NegativeTesting.java:45)
+at Scripts.NegativeTesting.createUser_emptyBody_shouldBeClientError(NegativeTesting.java:48)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)

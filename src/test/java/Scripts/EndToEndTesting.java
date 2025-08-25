@@ -1,5 +1,6 @@
 package Scripts;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -7,7 +8,9 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.*;
 import net.bytebuddy.NamingStrategy.Suffixing.BaseNameResolver.ForGivenType;
+import resources.TestListeners;
 
+@Listeners(TestListeners.class)
 public class EndToEndTesting {
 	
 	 private Integer Id;

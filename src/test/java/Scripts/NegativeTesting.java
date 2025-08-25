@@ -2,13 +2,16 @@ package Scripts;
 
 import static io.restassured.RestAssured.given;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import io.restassured.response.Response;
+import resources.TestListeners;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 
+@Listeners(TestListeners.class)
 public class NegativeTesting {
 	
 	 @Test

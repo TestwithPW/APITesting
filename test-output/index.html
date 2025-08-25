@@ -155,28 +155,6 @@
           <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">Scripts.NegativeTesting</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="createUser_emptyBody_shouldBeClientError">
-                  </a> <!-- createUser_emptyBody_shouldBeClientError -->
-                  <span class="method-name">createUser_emptyBody_shouldBeClientError</span>
-                  <div class="stack-trace">java.lang.AssertionError: The following asserts failed:
-	Expected 4xx for empty body, but got 201 expected [true] but found [false],
-	Error message should be there expected [true] but found [false]
-	at Scripts.NegativeTesting.createUser_emptyBody_shouldBeClientError(NegativeTesting.java:45)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 27 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
-          <div class="suite-Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
               <span class="class-name">Scripts.AuthTesting</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -212,7 +190,7 @@ Expected status code &lt;200&gt; but was &lt;404&gt;.
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-	at Scripts.AuthTesting.authtest(AuthTesting.java:35)
+	at Scripts.AuthTesting.authtest(AuthTesting.java:37)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 ... Removed 31 stack frames
 </div> <!-- stack-trace -->
@@ -220,6 +198,43 @@ Expected status code &lt;200&gt; but was &lt;404&gt;.
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">Scripts.NegativeTesting</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="createUser_emptyBody_shouldBeClientError">
+                  </a> <!-- createUser_emptyBody_shouldBeClientError -->
+                  <span class="method-name">createUser_emptyBody_shouldBeClientError</span>
+                  <div class="stack-trace">java.lang.AssertionError: The following asserts failed:
+	Expected 4xx for empty body, but got 201 expected [true] but found [false],
+	Error message should be there expected [true] but found [false]
+	at Scripts.NegativeTesting.createUser_emptyBody_shouldBeClientError(NegativeTesting.java:48)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">Scripts.AuthTesting</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="getUsers_headerAndBodyChecks">
+                  </a> <!-- getUsers_headerAndBodyChecks -->
+                  <span class="method-name">getUsers_headerAndBodyChecks</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -249,21 +264,6 @@ Expected status code &lt;200&gt; but was &lt;404&gt;.
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">Scripts.AuthTesting</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="getUsers_headerAndBodyChecks">
-                  </a> <!-- getUsers_headerAndBodyChecks -->
-                  <span class="method-name">getUsers_headerAndBodyChecks</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -276,8 +276,8 @@ Expected status code &lt;200&gt; but was &lt;404&gt;.
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;Scripts.NegativeTesting&quot;/&gt;
       &lt;class name=&quot;Scripts.AuthTesting&quot;/&gt;
+      &lt;class name=&quot;Scripts.NegativeTesting&quot;/&gt;
       &lt;class name=&quot;Scripts.EndToEndTesting&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
@@ -320,34 +320,34 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(6);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'createUser_emptyBody_shouldBeClientError')
-data.setCell(0, 2, 'Scripts.NegativeTesting')
-data.setCell(0, 3, 2551);
+data.setCell(0, 1, 'authtest')
+data.setCell(0, 2, 'Scripts.AuthTesting')
+data.setCell(0, 3, 1768);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'deleteUser')
+data.setCell(1, 1, 'createUser_extractId')
 data.setCell(1, 2, 'Scripts.EndToEndTesting')
-data.setCell(1, 3, 1403);
+data.setCell(1, 3, 928);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'createUser_extractId')
+data.setCell(2, 1, 'updateUser_put')
 data.setCell(2, 2, 'Scripts.EndToEndTesting')
-data.setCell(2, 3, 1096);
+data.setCell(2, 3, 913);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'updateUser_put')
-data.setCell(3, 2, 'Scripts.EndToEndTesting')
-data.setCell(3, 3, 1016);
+data.setCell(3, 1, 'createUser_emptyBody_shouldBeClientError')
+data.setCell(3, 2, 'Scripts.NegativeTesting')
+data.setCell(3, 3, 828);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'authtest')
+data.setCell(4, 1, 'getUsers_headerAndBodyChecks')
 data.setCell(4, 2, 'Scripts.AuthTesting')
-data.setCell(4, 3, 757);
+data.setCell(4, 3, 600);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'getUsers_headerAndBodyChecks')
-data.setCell(5, 2, 'Scripts.AuthTesting')
-data.setCell(5, 3, 327);
+data.setCell(5, 1, 'deleteUser')
+data.setCell(5, 2, 'Scripts.EndToEndTesting')
+data.setCell(5, 3, 509);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 seconds</span>
+              <span class="suite-total-time">Total running time: 5 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -373,40 +373,40 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Scripts.NegativeTesting</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">createUser_emptyBody_shouldBeClientError</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
               <div class="chronological-class-name">Scripts.AuthTesting</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">authtest</span>
-                <span class="method-start">2554 ms</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">getUsers_headerAndBodyChecks</span>
-                <span class="method-start">3313 ms</span>
+                <span class="method-start">1772 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">Scripts.NegativeTesting</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">createUser_emptyBody_shouldBeClientError</span>
+                <span class="method-start">2374 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">Scripts.EndToEndTesting</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">createUser_extractId</span>
-                <span class="method-start">3641 ms</span>
+                <span class="method-start">3204 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">updateUser_put</span>
-                <span class="method-start">4741 ms</span>
+                <span class="method-start">4135 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">deleteUser</span>
-                <span class="method-start">5758 ms</span>
+                <span class="method-start">5049 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

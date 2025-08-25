@@ -3,16 +3,16 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Scripts.NegativeTesting">
-        <methods>
-          <include name="createUser_emptyBody_shouldBeClientError"/>
-        </methods>
-      </class> <!-- Scripts.NegativeTesting -->
       <class name="Scripts.AuthTesting">
         <methods>
           <include name="authtest"/>
         </methods>
       </class> <!-- Scripts.AuthTesting -->
+      <class name="Scripts.NegativeTesting">
+        <methods>
+          <include name="createUser_emptyBody_shouldBeClientError"/>
+        </methods>
+      </class> <!-- Scripts.NegativeTesting -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

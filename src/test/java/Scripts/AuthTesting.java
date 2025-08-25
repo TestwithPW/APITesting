@@ -1,15 +1,17 @@
 package Scripts;
 
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import resources.TestListeners;
 
 import static io.restassured.RestAssured.*; // all RestAssured statics
-
+@Listeners(TestListeners.class)
 public class AuthTesting {
 
 	private String token;

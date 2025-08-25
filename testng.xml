@@ -3,9 +3,9 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="Scripts.NegativeTesting"/>
-      <class name="Scripts.AuthTesting"/>
-      <class name="Scripts.EndToEndTesting"/>
+		<class name="Scripts.AuthTesting"/>
+      	<class name="Scripts.NegativeTesting"/>
+      	<class name="Scripts.EndToEndTesting"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
