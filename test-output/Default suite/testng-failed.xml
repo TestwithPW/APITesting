@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Scripts.EndToEndTesting">
+      <class name="Scripts.NegativeTesting">
         <methods>
-          <include name="deleteUser"/>
-          <include name="createUser_extractId"/>
-          <include name="updateUser_put"/>
+          <include name="createUser_emptyBody_shouldBeClientError"/>
         </methods>
-      </class> <!-- Scripts.EndToEndTesting -->
+      </class> <!-- Scripts.NegativeTesting -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
