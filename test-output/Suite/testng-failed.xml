@@ -8,6 +8,13 @@
           <include name="authtest"/>
         </methods>
       </class> <!-- Scripts.AuthTesting -->
+      <class name="Scripts.EndToEndTesting">
+        <methods>
+          <include name="deleteUser"/>
+          <include name="createUser_extractId"/>
+          <include name="updateUser_put"/>
+        </methods>
+      </class> <!-- Scripts.EndToEndTesting -->
       <class name="Scripts.NegativeTesting">
         <methods>
           <include name="createUser_emptyBody_shouldBeClientError"/>

@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Aug 25 12:57:51 IST 2025</td>
+<td>Started on:</td><td>Thu Aug 28 22:16:21 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>2 seconds (2460 ms)</td>
+<tr><td>Total time:</td><td>1 seconds (1838 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,13 +76,13 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Scripts.NegativeTesting.createUser_emptyBody_shouldBeClientError()'><b>createUser_emptyBody_shouldBeClientError</b><br>Test class: Scripts.NegativeTesting</td>
+<td title='Scripts.EndToEndTesting.createUser_extractId()'><b>createUser_extractId</b><br>Test class: Scripts.EndToEndTesting</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
-	Expected 4xx for empty body, but got 201 expected [true] but found [false],
-	Error message should be there expected [true] but found [false]
+	POST /users should return 201 expected [201] but found [503],
+	Created user id must be &gt; 0 expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-	at Scripts.NegativeTesting.createUser_emptyBody_shouldBeClientError(NegativeTesting.java:48)
+	at Scripts.EndToEndTesting.createUser_extractId(EndToEndTesting.java:50)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -109,13 +109,13 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace837693403", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace837693403'><pre>java.lang.AssertionError: The following asserts failed:
-	Expected 4xx for empty body, but got 201 expected [true] but found [false],
-	Error message should be there expected [true] but found [false]
+</pre></div><a href='#' onClick='toggleBox("stack-trace734230775", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace734230775'><pre>java.lang.AssertionError: The following asserts failed:
+	POST /users should return 201 expected [201] but found [503],
+	Created user id must be &gt; 0 expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-	at Scripts.NegativeTesting.createUser_emptyBody_shouldBeClientError(NegativeTesting.java:48)
+	at Scripts.EndToEndTesting.createUser_extractId(EndToEndTesting.java:50)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -143,8 +143,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>2</td>
-<td>Scripts.NegativeTesting@f6efaab</td></tr>
+<td>1</td>
+<td>Scripts.EndToEndTesting@55b699ef</td></tr>
 </table><p>
 </body>
 </html>
