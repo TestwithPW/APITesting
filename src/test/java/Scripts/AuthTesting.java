@@ -93,6 +93,7 @@ public class AuthTesting {
 	    soft.assertTrue(size > 0, "Users response should not be empty");
 
 	    soft.assertAll();
+	    System.out.println("Change Committed for a Git push");
 	}
 	
 	
